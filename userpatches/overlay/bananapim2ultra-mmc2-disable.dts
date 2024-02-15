@@ -1,0 +1,15 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+        compatible = "sinovoip,bpi-m2-ultra", "allwinner,sun8i-r40";
+
+        fragment@0 {
+                target-path = "/soc/";
+                __overlay__ {
+                        mmc@1c11000 {
+                                status = "disabled";
+                        };
+                };
+        };
+};
