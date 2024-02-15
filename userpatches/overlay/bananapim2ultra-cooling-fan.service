@@ -1,0 +1,14 @@
+[Unit]
+Description=Enable cooling fan
+Before=basic.target
+After=local-fs.target sysinit.target
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=gpioset 0 277=1
+ExecStop=gpioset 0 277=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=basic.target
